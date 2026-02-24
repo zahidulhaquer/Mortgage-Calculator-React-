@@ -1,12 +1,9 @@
-import React from 'react'
 import SliderComponent from './common/SliderComponent';
 
 const SliderSelect = () => {
   return (
     <div>
-      <SliderComponent defaultValue={50} />
-      <SliderComponent defaultValue={75} />
-      <SliderComponent defaultValue={25} />
+      <SliderComponent amount={3500} unit="$" defaultValue={3000} min={1000} max={10000} label="Loan Amount" step={100} onChange={(e) => console.log(e.target.value)} />
     </div>
   )
 }
