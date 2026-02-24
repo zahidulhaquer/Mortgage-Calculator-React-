@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -11,16 +11,18 @@ function App() {
 
   return (
     <div className="App">
-      < Navbar />
-      <Grid container spacing={2}>
-        <Grid item>
-          <SliderSelect />
-          <Tenure />
+      <Navbar />
+      <Container maxWidth="xl">
+        <Grid container spacing={5}>
+          <Grid item md={6}>
+            <SliderSelect />
+            <Tenure />
+          </Grid>
+          <Grid item md={6}>
+            <Result />
+          </Grid>
         </Grid>
-        <Grid item>
-          <Result />
-        </Grid>
-      </Grid>
+      </Container>
     </div>
   )
 }
