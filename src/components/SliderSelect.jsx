@@ -4,7 +4,9 @@ import SliderComponent from './common/SliderComponent';
 const SliderSelect = () => {
   return (
     <div>
-      <SliderComponent />
+      <SliderComponent defaultValue={50} />
+      <SliderComponent defaultValue={75} />
+      <SliderComponent defaultValue={25} />
     </div>
   )
 }

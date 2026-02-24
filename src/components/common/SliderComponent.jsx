@@ -1,8 +1,8 @@
 import Slider from '@mui/material/Slider';
 
-const SliderComponent = () => {
+const SliderComponent = ({defaultValue}) => {
   return (
-    <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+    <Slider defaultValue={defaultValue} aria-label="Default" valueLabelDisplay="auto" />
   )
 }
 
