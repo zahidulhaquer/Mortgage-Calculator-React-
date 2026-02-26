@@ -7,7 +7,7 @@ import SliderSelect from './components/SliderSelect'
 import Tenure from './components/Tenure'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(10)
 
   return (
     <div className="App">
@@ -23,6 +23,18 @@ function App() {
           </Grid>
         </Grid>
       </Container>
+
+      <div>
+        <button onClick={() => setCount(count - 1)}>decrement</button>
+        <h1>{count}</h1>
+        <button onClick={() => setCount(count + 1)}>increment</button>
+      </div>
+
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <button onClick={() => setCount(count - 1)}>decrement</button>
+        <h1>{count}</h1>
+        <button onClick={() => setCount(count + 1)}>increment</button>
+      </div>
     </div>
   )
 }
