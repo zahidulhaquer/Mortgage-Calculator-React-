@@ -7,7 +7,16 @@ import SliderSelect from './components/SliderSelect'
 import Tenure from './components/Tenure'
 
 function App() {
-  const [count, setCount] = useState(10)
+  // const [count, setCount] = useState(10)
+  const [data, setData] = useState({
+    homeValue: 3000,
+    downPayment: 30000,
+    loanAmount: 3000,
+    loanTerm: 5,
+    interestRate: 5,
+  })
+
+  // console.log(data);
 
   return (
     <div className="App">
@@ -15,7 +24,7 @@ function App() {
       <Container maxWidth="xl">
         <Grid container spacing={5}>
           <Grid item md={6}>
-            <SliderSelect />
+            <SliderSelect data={data} setData={setData}/>
             <Tenure />
           </Grid>
           <Grid item md={6}>
@@ -24,17 +33,11 @@ function App() {
         </Grid>
       </Container>
 
-      <div>
+      {/* <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
         <button onClick={() => setCount(count - 1)}>decrement</button>
         <h1>{count}</h1>
         <button onClick={() => setCount(count + 1)}>increment</button>
-      </div>
-
-      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        <button onClick={() => setCount(count - 1)}>decrement</button>
-        <h1>{count}</h1>
-        <button onClick={() => setCount(count + 1)}>increment</button>
-      </div>
+      </div> */}
     </div>
   )
 }
