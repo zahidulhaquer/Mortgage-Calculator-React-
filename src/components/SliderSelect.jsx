@@ -7,16 +7,65 @@ const SliderSelect = ({ data, setData }) => {
 
   return (
     <div>
-      <SliderComponent amount={data.homeValue} unit="$" defaultValue={data.homeValue} value={data.homeValue} min={1000} max={bank_limit} label="Home Value" step={100} onChange={(e, value) => setData({
-        ...data,
-        homeValue: value
-      })} />
+      <SliderComponent
+        amount={data.homeValue}
+        unit="$"
+        defaultValue={data.homeValue}
+        value={data.homeValue}
+        min={1000}
+        max={bank_limit}
+        label="Home Value"
+        step={100} o
+        onChange={(e, value) => setData({
+          ...data,
+          homeValue: value,
+          downPayment: value * 0.2,
+          loanAmount: value * 0.8
+        })} />
 
-      <SliderComponent amount={3500} unit="$" defaultValue={3000} min={0} max={3000} label="Down Payment" step={100} onChange={(e) => console.log(e.target.value)} />
+      <SliderComponent
+        amount={data.downPayment}
+        unit="$"
+        defaultValue={data.downPayment}
+        value={data.downPayment}
+        min={0}
+        max={data.homeValue}
+        label="Down Payment"
+        step={100}
+        onChange={(e, value) => setData({
+          ...data,
+          downPayment: value,
+          loanAmount: data.homeValue - value
+        })} />
 
-      <SliderComponent amount={3500} unit="$" defaultValue={3000} min={0} max={3000} label="Loan Amount" step={100} onChange={(e) => console.log(e.target.value)} />
+      <SliderComponent
+        amount={data.loanAmount}
+        unit="$"
+        defaultValue={data.loanAmount}
+        value={data.loanAmount}
+        min={0}
+        max={data.homeValue}
+        label="Loan Amount"
+        step={100}
+        onChange={(e, value) => setData({
+          ...data,
+          loanAmount: value,
+          downPayment: data.homeValue - value
+        })} />
 
-      <SliderComponent amount={2} unit="%" defaultValue={2} min={2} max={18} label="Interest Rate" step={0.5} onChange={(e) => console.log(e.target.value)} />
+      <SliderComponent
+        amount={data.interestRate}
+        unit="%"
+        defaultValue={data.interestRate}
+        value={data.interestRate}
+        min={2}
+        max={18}
+        label="Interest Rate"
+        step={0.5}
+        onChange={(e, value) => setData({
+          ...data,
+          interestRate: value
+        })} />
     </div>
   )
 }
