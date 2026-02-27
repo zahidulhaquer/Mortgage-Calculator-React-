@@ -9,8 +9,6 @@ export default function Tenure({ data, setData }) {
 
   const handleChange = (event) => setData({ ...data, loanTerm: event.target.value })
 
-  console.log(data);
-
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
