@@ -37,7 +37,7 @@ const Result = ({ data }) => {
   };
 
   return (
-    <Stack gap={3}>
+    <Stack gap={3}> // Add gap between elements
       <Typography variant="h5" textAlign="center">Monthly Payment: ${monthlyPayment.toFixed(2)}</Typography>
       <Typography textAlign="center" variant="h6">Total Interest Paid: ${totalInterestGenerated.toFixed(2)}</Typography>
       <Stack direction="row" justifyContent="center">
